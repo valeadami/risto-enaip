@@ -1,4 +1,5 @@
 venv/
+Scripts/
+Lib/
 __pycache__/
-*.pyc
 .env
