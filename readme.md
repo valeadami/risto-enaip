@@ -11,11 +11,53 @@ Questo progetto implementa un'API REST per la gestione di un ristorante, progett
 - Render per il deployment
 
 
-## API Endpoints
+## API Endpoints pubblici
 
+### Gestione Prenotazioni
 - `GET /`: Homepage
 - `GET /menu`: Restituisce il menu del ristorante
 - `GET /bevande`: Restituisce la lista delle bevande disponibili
+- `POST /v1/prenotazioni`: Crea una nuova prenotazione
+  ```json
+  {
+    "dataPrenotazione": "2024-01-20",
+    "oraPrenotazione": "19:30",
+    "numPersone": 4,
+    "phone": "1234567890",
+    "nominativo": "Mario Rossi"
+  }
+  ```
+
+- `GET /v1/prenotazioni`: Recupera tutte le prenotazioni
+- `GET /v1/prenotazioni/{id}`: Recupera una prenotazione specifica
+- `PUT /v1/prenotazioni/{id}`: Modifica una prenotazione esistente
+  ```json
+  {
+    "dataPrenotazione": "2024-01-21",
+    "oraPrenotazione": "20:30",
+    "numPersone": 6,
+    "phone": "1234567890",
+    "nominativo": "Mario Rossi"
+  }
+  ```
+
+### Formato Risposte
+
+Esempio di risposta per una prenotazione creata:
+```json
+{
+  "success": true,
+  "message": "Prenotazione aggiunta con successo",
+  "prenotazioni": {
+    "id": "RES-1234567890",
+    "dataPrenotazione": "2024-01-20",
+    "oraPrenotazione": "19:30",
+    "numPersone": 4,
+    "phone": "1234567890",
+    "nominativo": "Mario Rossi"
+  },
+  "status": 200
+}
 
 ## Deployment
 
