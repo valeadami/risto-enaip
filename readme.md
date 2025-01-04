@@ -58,6 +58,7 @@ Esempio di risposta per una prenotazione creata:
   },
   "status": 200
 }
+```
 
 ## Deployment
 
