@@ -1,24 +1,10 @@
 from datetime import datetime
 from fastapi import FastAPI,  HTTPException
-from pydantic import BaseModel
+from models.prenotazione import Prenotazione, PrenotazioneResponse
 
 #FastAPI è un framework web moderno e veloce per costruire API con Python 3.6+ basato su standard Python type hints.
 app = FastAPI()
 # Modello dati per le prenotazioni
-class Prenotazione(BaseModel):
-    dataPrenotazione: str
-    oraPrenotazione: str
-    numPersone: int
-    phone: str
-    nominativo: str
-
-class PrenotazioneResponse(BaseModel):
-    id: str
-    dataPrenotazione: str
-    oraPrenotazione: str
-    numPersone: int
-    phone: str
-    nominativo: str
 prenotazioni = []
 @app.get("/")
 async def root():
